@@ -1,5 +1,5 @@
 
-# #+REVEAL_ROOT: http://cdn.jsdelivr.net/reveal.js/3.0.0/
+#+REVEAL_ROOT: http://cdn.jsdelivr.net/reveal.js/3.0.0/
 #+OPTIONS: toc:nil num:nil reveal_title_slide:nil
 #+TITLE: Improving performance through parallelization
 #+AUTHOR: Bonta Sergiu Vlad
