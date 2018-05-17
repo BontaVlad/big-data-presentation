@@ -7,9 +7,9 @@
 <style type="text/css">
 .underline { text-decoration: underline; }
 </style>
-<link rel="stylesheet" href="http://cdn.jsdelivr.net/reveal.js/3.0.0/css/reveal.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/css/reveal.css"/>
 
-<link rel="stylesheet" href="http://cdn.jsdelivr.net/reveal.js/3.0.0/css/theme/moon.css" id="theme"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/css/theme/moon.css" id="theme"/>
 
 
 <!-- If the query includes 'print-pdf', include the PDF print sheet -->
@@ -18,7 +18,7 @@
         var link = document.createElement( 'link' );
         link.rel = 'stylesheet';
         link.type = 'text/css';
-        link.href = 'http://cdn.jsdelivr.net/reveal.js/3.0.0/css/print/pdf.css';
+        link.href = 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/css/print/pdf.css';
         document.getElementsByTagName( 'head' )[0].appendChild( link );
     }
 </script>
@@ -28,13 +28,13 @@
 <div class="slides">
 
 <section>
-<section id="slide-org3e28728">
-<h2 id="org3e28728">Improving performance through parallelization</h2>
+<section id="slide-org4ef6297">
+<h2 id="org4ef6297">Improving performance through parallelization</h2>
 </section>
 </section>
 <section>
-<section id="slide-org7f498e4">
-<h2 id="org7f498e4">Table of content</h2>
+<section id="slide-orgbab51ae">
+<h2 id="orgbab51ae">Table of content</h2>
 <ul>
 <li class="fragment roll-in">Introduction</li>
 <li class="fragment roll-in">The problem</li>
@@ -47,8 +47,8 @@
 </section>
 </section>
 <section>
-<section id="slide-org14f977c">
-<h2 id="org14f977c">Me, myself and I</h2>
+<section id="slide-org91e92e9">
+<h2 id="org91e92e9">Me, myself and I</h2>
 <p>
 <b>Bonta Sergiu Vlad</b> 
 </p>
@@ -68,8 +68,8 @@ Me knows mostly <b>Python</b> and <b>Javascript</b>
 </section>
 </section>
 <section>
-<section id="slide-orge9244c3">
-<h2 id="orge9244c3">The problem</h2>
+<section id="slide-org3a50834">
+<h2 id="org3a50834">The problem</h2>
 <p>
 8VANCE
 </p>
@@ -80,8 +80,8 @@ Me knows mostly <b>Python</b> and <b>Javascript</b>
 </div>
 
 </section>
-<section id="slide-org97883ff">
-<h3 id="org97883ff">What they say</h3>
+<section id="slide-org65ba88c">
+<h3 id="org65ba88c">What they say</h3>
 <p>
 8vance is a high-tech start-up who has developed the first deep matching platform for talents and recruiters. Our platform combines with a virtual recruitment and career assistent called AIMA (Automatic Intelligent Matching Agent) who does all the work. AIMA is based on the 8vance state-of-the-art platform matching technology. This technology matches jobs and talents better and faster.
 </p>
@@ -91,8 +91,8 @@ Me knows mostly <b>Python</b> and <b>Javascript</b>
 </section>
 </section>
 <section>
-<section id="slide-orgb03d24a">
-<h2 id="orgb03d24a">How does it work</h2>
+<section id="slide-org980e568">
+<h2 id="org980e568">How does it work</h2>
 
 <div class="figure">
 <p><img src="./matching_engine.png" alt="matching_engine.png" style="max-width: 80%" />
@@ -102,8 +102,8 @@ Me knows mostly <b>Python</b> and <b>Javascript</b>
 </section>
 </section>
 <section>
-<section id="slide-org47ef5d6">
-<h2 id="org47ef5d6">When big is to big</h2>
+<section id="slide-orga8a21a0">
+<h2 id="orga8a21a0">When big is to big</h2>
 <p>
 Millions of users each having hundreds of traits that have to be matched against millions of jobs each having hundreds of traits.
 </p>
@@ -111,8 +111,8 @@ Millions of users each having hundreds of traits that have to be matched against
 </section>
 </section>
 <section>
-<section id="slide-org716c8d4">
-<h2 id="org716c8d4">Big Data</h2>
+<section id="slide-org8a0343f">
+<h2 id="org8a0343f">Big Data</h2>
 
 <div class="figure">
 <p><img src="./big-data.jpg" alt="big-data.jpg" />
@@ -120,30 +120,30 @@ Millions of users each having hundreds of traits that have to be matched against
 </div>
 
 </section>
-<section id="slide-org7386684">
-<h3 id="org7386684">The Three Vs of Big Data</h3>
+<section id="slide-org2fb491a">
+<h3 id="org2fb491a">The Three Vs of Big Data</h3>
 <p>
 Put simply, big data is larger, more complex data sets, especially from new data sources. These data sets are so voluminous that traditional data processing software just can’t manage them. But these massive volumes of data can be used to address business problems you wouldn’t have been able to tackle before.
 </p>
 
 
 </section>
-<section id="slide-org840334e">
-<h3 id="org840334e">Volume</h3>
+<section id="slide-org168b4e2">
+<h3 id="org168b4e2">Volume</h3>
 <p>
 The amount of data matters. With big data, you’ll have to process high volumes of low-density, unstructured data. This can be data of unknown value, such as Twitter data feeds, clickstreams on a webpage or a mobile app, or sensor-enabled equipment. For some organizations, this might be tens of terabytes of data. For others, it may be hundreds of petabytes.
 </p>
 
 </section>
-<section id="slide-orgab25dd2">
-<h3 id="orgab25dd2">Velocity</h3>
+<section id="slide-org8d17024">
+<h3 id="org8d17024">Velocity</h3>
 <p>
 Velocity is the fast rate at which data is received and (perhaps) acted on. Normally, the highest velocity of data streams directly into memory versus being written to disk. Some internet-enabled smart products operate in real time or near real time and will require real-time evaluation and action. 
 </p>
 
 </section>
-<section id="slide-orgfc2f287">
-<h3 id="orgfc2f287">Variety</h3>
+<section id="slide-orgc056ea5">
+<h3 id="orgc056ea5">Variety</h3>
 <p>
 Variety refers to the many types of data that are available. Traditional data types were structured and fit neatly in a relational database. With the rise of big data, data comes in new unstructured data types. Unstructured and semistructured data types, such as text, audio, and video require additional preprocessing to derive meaning and support metadata.
 </p>
@@ -151,14 +151,14 @@ Variety refers to the many types of data that are available. Traditional data ty
 </section>
 </section>
 <section>
-<section id="slide-org81a67a8">
-<h2 id="org81a67a8">Big Data Challenges</h2>
+<section id="slide-orgc9b1e70">
+<h2 id="orgc9b1e70">Big Data Challenges</h2>
 <p>
 First, big data is…big. Although new technologies have been developed for data storage, data volumes are doubling in size about every two years. 
 </p>
 </section>
-<section id="slide-orgdc00c5c">
-<h3 id="orgdc00c5c">But it's not enough to just store de Data</h3>
+<section id="slide-org7f92a7a">
+<h3 id="org7f92a7a">But it's not enough to just store de Data</h3>
 <p>
 Data must be used to be valuable and that depends on curation. Clean data, or data that’s relevant to the client and organized in a way that enables meaningful analysis, requires a lot of work. 
 </p>
@@ -166,13 +166,13 @@ Data must be used to be valuable and that depends on curation. Clean data, or da
 </section>
 </section>
 <section>
-<section id="slide-org50fe55a">
-<h2 id="org50fe55a">Tools to help tame the complexity</h2>
+<section id="slide-orgac82cbd">
+<h2 id="orgac82cbd">Tools to help tame the complexity</h2>
 </section>
 </section>
 <section>
-<section id="slide-org639d9cf">
-<h2 id="org639d9cf">Apache Spark</h2>
+<section id="slide-orgfcbdd1f">
+<h2 id="orgfcbdd1f">Apache Spark</h2>
 <p>
 Apache Spark is one of the key big data distributed processing frameworks in the world.
 </p>
@@ -184,8 +184,8 @@ You’ll find it used by banks, telecommunications companies, games companies, g
 </section>
 </section>
 <section>
-<section id="slide-org4edb032">
-<h2 id="org4edb032">Enter PySpark</h2>
+<section id="slide-orgfcfc605">
+<h2 id="orgfcfc605">Enter PySpark</h2>
 <div class="org-src-container">
 
 <pre  class="src src-bash">Welcome to
@@ -201,8 +201,8 @@ You’ll find it used by banks, telecommunications companies, games companies, g
 </div>
 
 </section>
-<section id="slide-org21977bb">
-<h3 id="org21977bb">"Hello World"</h3>
+<section id="slide-org779ae13">
+<h3 id="org779ae13">"Hello World"</h3>
 <div class="org-src-container">
 
 <pre  class="src src-python">&gt;&gt;&gt; <span style="color: #7590db;">words</span> = sc.textFile<span style="color: #4f97d7;">(</span><span style="color: #2d9574;">"/usr/share/dict/words"</span><span style="color: #4f97d7;">)</span>
@@ -215,8 +215,8 @@ You’ll find it used by banks, telecommunications companies, games companies, g
 </section>
 </section>
 <section>
-<section id="slide-org2fe9cb7">
-<h2 id="org2fe9cb7">Hadoop</h2>
+<section id="slide-org7ea7c23">
+<h2 id="org7ea7c23">Hadoop</h2>
 
 <div class="figure">
 <p><img src="./hadoop_logo.png" alt="hadoop_logo.png" style="max-width: 70%" />
@@ -228,8 +228,8 @@ Infrastructure software for processing and managing large datasets. Hadoop is a 
 </p>
 
 </section>
-<section id="slide-org796f7cb">
-<h3 id="org796f7cb">Distributed File-System(HDFS)</h3>
+<section id="slide-orgeaf1586">
+<h3 id="orgeaf1586">Distributed File-System(HDFS)</h3>
 <p>
 Hadoop Distributed File System allows you to store the data in an easily accessible format, across a large number of linked storage devices and MapReduce - which provides the basic tools for poking around in the data. 
 </p>
@@ -237,8 +237,8 @@ Hadoop Distributed File System allows you to store the data in an easily accessi
 </section>
 </section>
 <section>
-<section id="slide-org5d5728c">
-<h2 id="org5d5728c">MapReduce</h2>
+<section id="slide-orgc3d86e5">
+<h2 id="orgc3d86e5">MapReduce</h2>
 
 <div class="figure">
 <p><img src="./mapreduce-example.png" alt="mapreduce-example.png" />
@@ -246,8 +246,8 @@ Hadoop Distributed File System allows you to store the data in an easily accessi
 </div>
 
 </section>
-<section id="slide-orge3a6752">
-<h3 id="orge3a6752"></h3>
+<section id="slide-org329847b">
+<h3 id="org329847b"></h3>
 <p>
 MapReduce is named after the two basic operations this module carries out - reading data from the database, putting it into a format suitable for analysis (map), and performing mathematical operations i.e counting the number of males aged 30+ in a customer database (reduce). 
 </p>
@@ -255,41 +255,41 @@ MapReduce is named after the two basic operations this module carries out - read
 </section>
 </section>
 <section>
-<section id="slide-orgb35607a">
-<h2 id="orgb35607a">Conclusion</h2>
+<section id="slide-org932a5a1">
+<h2 id="org932a5a1">Conclusion</h2>
 <p>
 In the end we did not chose the PySpark/Hadoop way.
 </p>
 </section>
 </section>
 <section>
-<section id="slide-org3f776eb">
-<h2 id="org3f776eb">But Why?</h2>
-<div class="outline-text-2" id="text-org3f776eb">
+<section id="slide-org121f01f">
+<h2 id="org121f01f">But Why?</h2>
+<div class="outline-text-2" id="text-org121f01f">
 </div>
 </section>
-<section id="slide-orge3629ef">
-<h3 id="orge3629ef">Complete investment in the tehnology</h3>
+<section id="slide-orgb963c37">
+<h3 id="orgb963c37">Complete investment in the tehnology</h3>
 </section>
-<section id="slide-org1a2c6de">
-<h3 id="org1a2c6de">Hard/expensive to find experts</h3>
+<section id="slide-org7e6df08">
+<h3 id="org7e6df08">Hard/expensive to find experts</h3>
 </section>
-<section id="slide-org31eac85">
-<h3 id="org31eac85">A lot of overhead</h3>
+<section id="slide-org3591d09">
+<h3 id="org3591d09">A lot of overhead</h3>
 </section>
-<section id="slide-org1a913fb">
-<h3 id="org1a913fb">Big Ramp-pup</h3>
+<section id="slide-orga632bfc">
+<h3 id="orga632bfc">Big Ramp-pup</h3>
 </section>
 </section>
 <section>
-<section id="slide-org0988a59">
-<h2 id="org0988a59">Questions?</h2>
+<section id="slide-org7f38291">
+<h2 id="org7f38291">Questions?</h2>
 </section>
 </section>
 </div>
 </div>
-<script src="http://cdn.jsdelivr.net/reveal.js/3.0.0/lib/js/head.min.js"></script>
-<script src="http://cdn.jsdelivr.net/reveal.js/3.0.0/js/reveal.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/lib/js/head.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/js/reveal.js"></script>
 
 <script>
 // Full list of configuration options available here:
@@ -316,11 +316,11 @@ multiplex: {
 
 // Optional libraries used to extend on reveal.js
 dependencies: [
- { src: 'http://cdn.jsdelivr.net/reveal.js/3.0.0/lib/js/classList.js', condition: function() { return !document.body.classList; } },
- { src: 'http://cdn.jsdelivr.net/reveal.js/3.0.0/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
- { src: 'http://cdn.jsdelivr.net/reveal.js/3.0.0/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
- { src: 'http://cdn.jsdelivr.net/reveal.js/3.0.0/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
- { src: 'http://cdn.jsdelivr.net/reveal.js/3.0.0/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }]
+ { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+ { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+ { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }]
 });
 </script>
 </body>
