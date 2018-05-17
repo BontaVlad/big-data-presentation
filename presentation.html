@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Improving performance through parallelization</title>
+<meta name="author" content="(Bonta Sergiu Vlad)"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="./reveal.js/css/reveal.css"/>
+
+<link rel="stylesheet" href="./reveal.js/css/theme/moon.css" id="theme"/>
+
+
+<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+<script>
+    if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = './reveal.js/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    }
+</script>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+
+<section>
+<section id="slide-org8ff7cff">
+<h2 id="org8ff7cff">Improving performance through parallelization</h2>
+</section>
+</section>
+<section>
+<section id="slide-org461e8b2">
+<h2 id="org461e8b2">Table of content</h2>
+<ul>
+<li class="fragment roll-in">Introduction</li>
+<li class="fragment roll-in">The problem</li>
+<li class="fragment roll-in">How does it work</li>
+<li class="fragment roll-in">What is to big</li>
+<li class="fragment roll-in">How to solve it</li>
+<li class="fragment roll-in">Conclusion</li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-orgff5bad8">
+<h2 id="orgff5bad8">Me, myself and I</h2>
+<p>
+<b>Bonta Sergiu Vlad</b> 
+</p>
+
+<p>
+Email/contact: <b>bonta.vlad@gmail.com</b> or just google my name
+</p>
+
+<p>
+Web developer for about 5 years(it's less then 5 but not by much)
+</p>
+
+<p>
+Me knows mostly <b>Python</b> and <b>Javascript</b>
+</p>
+
+</section>
+</section>
+<section>
+<section id="slide-orge28887f">
+<h2 id="orge28887f">The problem</h2>
+<p>
+8VANCE
+</p>
+
+<div class="figure">
+<p><img src="./header.png" alt="header.png" style="max-width: 80%" />
+</p>
+</div>
+
+</section>
+<section id="slide-org596ea85">
+<h3 id="org596ea85">What they say</h3>
+<p>
+8vance is a high-tech start-up who has developed the first deep matching platform for talents and recruiters. Our platform combines with a virtual recruitment and career assistent called AIMA (Automatic Intelligent Matching Agent) who does all the work. AIMA is based on the 8vance state-of-the-art platform matching technology. This technology matches jobs and talents better and faster.
+</p>
+
+
+
+</section>
+</section>
+<section>
+<section id="slide-orgb33ea97">
+<h2 id="orgb33ea97">How does it work</h2>
+
+<div class="figure">
+<p><img src="./matching_engine.png" alt="matching_engine.png" style="max-width: 80%" />
+</p>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-org6815c2c">
+<h2 id="org6815c2c">When big is to big</h2>
+<p>
+Millions of users each having hundreds of traits that have to be matched against millions of jobs each having hundreds of traits.
+</p>
+
+</section>
+</section>
+<section>
+<section id="slide-orgfce8856">
+<h2 id="orgfce8856">Big Data</h2>
+
+<div class="figure">
+<p><img src="./big-data.jpg" alt="big-data.jpg" />
+</p>
+</div>
+
+</section>
+<section id="slide-orga5f7b14">
+<h3 id="orga5f7b14">The Three Vs of Big Data</h3>
+<p>
+Put simply, big data is larger, more complex data sets, especially from new data sources. These data sets are so voluminous that traditional data processing software just can’t manage them. But these massive volumes of data can be used to address business problems you wouldn’t have been able to tackle before.
+</p>
+
+
+</section>
+<section id="slide-org9915beb">
+<h3 id="org9915beb">Volume</h3>
+<p>
+The amount of data matters. With big data, you’ll have to process high volumes of low-density, unstructured data. This can be data of unknown value, such as Twitter data feeds, clickstreams on a webpage or a mobile app, or sensor-enabled equipment. For some organizations, this might be tens of terabytes of data. For others, it may be hundreds of petabytes.
+</p>
+
+</section>
+<section id="slide-org9f57eaa">
+<h3 id="org9f57eaa">Velocity</h3>
+<p>
+Velocity is the fast rate at which data is received and (perhaps) acted on. Normally, the highest velocity of data streams directly into memory versus being written to disk. Some internet-enabled smart products operate in real time or near real time and will require real-time evaluation and action. 
+</p>
+
+</section>
+<section id="slide-org792ffa9">
+<h3 id="org792ffa9">Variety</h3>
+<p>
+Variety refers to the many types of data that are available. Traditional data types were structured and fit neatly in a relational database. With the rise of big data, data comes in new unstructured data types. Unstructured and semistructured data types, such as text, audio, and video require additional preprocessing to derive meaning and support metadata.
+</p>
+
+</section>
+</section>
+<section>
+<section id="slide-orgc74aaa4">
+<h2 id="orgc74aaa4">Big Data Challenges</h2>
+<p>
+First, big data is…big. Although new technologies have been developed for data storage, data volumes are doubling in size about every two years. 
+</p>
+</section>
+<section id="slide-orgf0bf8bc">
+<h3 id="orgf0bf8bc">But it's not enough to just store de Data</h3>
+<p>
+Data must be used to be valuable and that depends on curation. Clean data, or data that’s relevant to the client and organized in a way that enables meaningful analysis, requires a lot of work. 
+</p>
+
+</section>
+</section>
+<section>
+<section id="slide-orgb2cf644">
+<h2 id="orgb2cf644">Tools to help tame the complexity</h2>
+</section>
+</section>
+<section>
+<section id="slide-orgbcf3408">
+<h2 id="orgbcf3408">Apache Spark</h2>
+<p>
+Apache Spark is one of the key big data distributed processing frameworks in the world.
+</p>
+
+<p>
+You’ll find it used by banks, telecommunications companies, games companies, governments, and all of the major tech giants such as Apple, Facebook, IBM, and Microsoft.
+</p>
+
+</section>
+</section>
+<section>
+<section id="slide-org185a83a">
+<h2 id="org185a83a">Enter PySpark</h2>
+<div class="org-src-container">
+
+<pre  class="src src-bash">Welcome to
+      ____              __
+     / __/__  ___ _____/ /__
+    _<span style="color: #2d9574;">\ \/</span> _ <span style="color: #2d9574;">\/</span> _ <span style="color: #fa8072;">`/ __/  '_/</span>
+<span style="color: #fa8072;">   /__ / .__/\_,_/_/ /_/\_\   version 2.1.0</span>
+<span style="color: #fa8072;">      /_/</span>
+
+<span style="color: #fa8072;">Using Python version 2.7.13 (v2.7.13:a06454b1afa1, Dec 17 2016 12:39:47)</span>
+<span style="color: #fa8072;">SparkSession available as 'spark'.</span>
+</pre>
+</div>
+
+</section>
+<section id="slide-org712f81d">
+<h3 id="org712f81d">"Hello World"</h3>
+<div class="org-src-container">
+
+<pre  class="src src-python">&gt;&gt;&gt; <span style="color: #7590db;">words</span> = sc.textFile<span style="color: #4f97d7;">(</span><span style="color: #2d9574;">"/usr/share/dict/words"</span><span style="color: #4f97d7;">)</span>
+&gt;&gt;&gt; words.<span style="color: #4f97d7;">filter</span><span style="color: #4f97d7;">(</span><span style="color: #4f97d7; font-weight: bold;">lambda</span> w: w.startswith<span style="color: #bc6ec5;">(</span><span style="color: #2d9574;">"spar"</span><span style="color: #bc6ec5;">)</span><span style="color: #4f97d7;">)</span>.take<span style="color: #4f97d7;">(</span><span style="color: #a45bad;">5</span><span style="color: #4f97d7;">)</span>
+<span style="color: #4f97d7;">[</span>u<span style="color: #2d9574;">'spar'</span>, u<span style="color: #2d9574;">'sparable'</span>, u<span style="color: #2d9574;">'sparada'</span>, u<span style="color: #2d9574;">'sparadrap'</span>, u<span style="color: #2d9574;">'sparagrass'</span><span style="color: #4f97d7;">]</span>
+&gt;&gt;&gt; <span style="color: #4f97d7;">help</span><span style="color: #4f97d7;">(</span>pyspark<span style="color: #4f97d7;">)</span> <span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">Show all pyspark functions</span>
+</pre>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-orgc39a063">
+<h2 id="orgc39a063">Hadoop</h2>
+
+<div class="figure">
+<p><img src="./hadoop_logo.png" alt="hadoop_logo.png" style="max-width: 70%" />
+</p>
+</div>
+
+<p>
+Infrastructure software for processing and managing large datasets. Hadoop is a cluster system.
+</p>
+
+</section>
+<section id="slide-orgb067509">
+<h3 id="orgb067509">Distributed File-System(HDFS)</h3>
+<p>
+Hadoop Distributed File System allows you to store the data in an easily accessible format, across a large number of linked storage devices and MapReduce - which provides the basic tools for poking around in the data. 
+</p>
+
+</section>
+</section>
+<section>
+<section id="slide-org748f5f0">
+<h2 id="org748f5f0">MapReduce</h2>
+
+<div class="figure">
+<p><img src="./mapreduce-example.png" alt="mapreduce-example.png" />
+</p>
+</div>
+
+</section>
+<section id="slide-org007ec0a">
+<h3 id="org007ec0a"></h3>
+<p>
+MapReduce is named after the two basic operations this module carries out - reading data from the database, putting it into a format suitable for analysis (map), and performing mathematical operations i.e counting the number of males aged 30+ in a customer database (reduce). 
+</p>
+
+</section>
+</section>
+<section>
+<section id="slide-orgc15aa23">
+<h2 id="orgc15aa23">Conclusion</h2>
+<p>
+In the end we did not chose the PySpark/Hadoop way.
+</p>
+</section>
+</section>
+<section>
+<section id="slide-org6b79561">
+<h2 id="org6b79561">But Why?</h2>
+<div class="outline-text-2" id="text-org6b79561">
+</div>
+</section>
+<section id="slide-org7b2e189">
+<h3 id="org7b2e189">Complete investment in the tehnology</h3>
+</section>
+<section id="slide-orgb553231">
+<h3 id="orgb553231">Hard/expensive to find experts</h3>
+</section>
+<section id="slide-org20c6aa0">
+<h3 id="org20c6aa0">A lot of overhead</h3>
+</section>
+<section id="slide-org1ae6f07">
+<h3 id="org1ae6f07">Big Ramp-pup</h3>
+</section>
+</section>
+<section>
+<section id="slide-org902148c">
+<h2 id="org902148c">Questions?</h2>
+</section>
+</section>
+</div>
+</div>
+<script src="./reveal.js/lib/js/head.min.js"></script>
+<script src="./reveal.js/js/reveal.js"></script>
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: false,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+overview: true,
+
+theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+transitionSpeed: 'default',
+multiplex: {
+    secret: '', // null if client
+    id: '', // id, obtained from socket.io server
+    url: '' // Location of socket.io server
+},
+
+// Optional libraries used to extend on reveal.js
+dependencies: [
+ { src: './reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+ { src: './reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: './reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: './reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+ { src: './reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }]
+});
+</script>
+</body>
+</html>
